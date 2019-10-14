@@ -3070,6 +3070,11 @@ end
 % ==============================================================================
 function [m2t,str] = drawSurface(m2t, h)
 
+str = '';
+if ~isVisible(h)
+    return
+end
+
 [m2t, opts, s] = shaderOpts(m2t, h,'surf');
 tableOptions = opts_new();
 
